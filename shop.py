@@ -1,13 +1,14 @@
-# Simple Shopping Cart Program (No View Cart Option)
+# Simple Shopping Cart Program
 
 def show_menu():
     print("\n==== Shopping Cart Menu ====")
     print("1. Add item")
     print("2. Remove item")
-    print("3. Checkout")
-    print("4. Exit")
+    print("3. View cart")
+    print("4. Checkout")
+    print("5. Exit")
 
-def display_cart(cart):
+def view_cart(cart):
     if not cart:
         print("Your cart is empty.")
     else:
@@ -23,7 +24,7 @@ def main():
 
     while True:
         show_menu()
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-5): ")
 
         if choice == "1":
             name = input("Enter item name: ")
@@ -44,11 +45,14 @@ def main():
                 print("Item not found in cart.")
 
         elif choice == "3":
-            display_cart(cart)
+            view_cart(cart)
+
+        elif choice == "4":
+            view_cart(cart)
             print("Thank you for shopping!")
             break
 
-        elif choice == "4":
+        elif choice == "5":
             print("Exiting program...")
             break
 
